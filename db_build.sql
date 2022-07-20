@@ -62,6 +62,9 @@ CREATE TABLE `shelfItems`
 
 CREATE INDEX `IFK_WarehouseId` ON `Warehouse` (`whId`);
 
+ALTER TABLE `Warehouse` ADD CONSTRAINT `Designation_Unique`
+	UNIQUE (`designation`);
+
 ALTER TABLE `Shelf` ADD CONSTRAINT `FK_WarehouseId`
     FOREIGN KEY (`whId`) REFERENCES `Warehouse` (`whId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
