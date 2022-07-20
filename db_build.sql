@@ -19,6 +19,7 @@ USE `Wherehoused`;
 CREATE TABLE `Warehouse`
 (
     `whID` INT NOT NULL AUTO_INCREMENT,
+    `designation` NVARCHAR(160) NOT NULL,
     `sAddress` NVARCHAR(160) NOT NULL,
     `numShelves` INT NOT NULL,
     CONSTRAINT `PK_Warehouse` PRIMARY KEY  (`whID`)
