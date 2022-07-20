@@ -6,8 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-
 import jdbc.conf.WherehousedCredentials;
 import jdbc.models.Warehouse;
 
@@ -49,14 +47,40 @@ public class MySQLWareDAO implements WarehouseDAO {
 
   @Override
   public Warehouse findById(int id) {
-    // TODO Auto-generated method stub
+    String sql = "SELECT * FROM Warehouse WHERE whID = ?";
+    try (Connection conn = WherehousedCredentials.getInstance().getConnection()) {
+      PreparedStatement ps = conn.prepareStatement(sql);
+      ps.setInt(1, id);
+      ResultSet rs = ps.executeQuery();
+      if (rs.next()) {
+        return new Warehouse(rs.getString("designation"), rs.getString("address"), rs.getInt("numShelves"));
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
     return null;
   }
 
   @Override
   public Warehouse findByDes(String designation) {
-    // TODO Auto-generated method stub
+    String sql = "SELECT * FROM Warehouse WHERE Designation = ?";
+    try (Connection conn = WherehousedCredentials.getInstance().getConnection()) {
+      PreparedStatement ps = conn.prepareStatement(sql);
+      ps.setString(1, designation);
+      ResultSet rs = ps.executeQuery();
+      if (rs.next()) {
+        return new Warehouse(rs.getString("designation"), rs.getString("address"), rs.getInt("numShelves"));
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
     return null;
+  }
+  
+  @Override
+  public Warehouse findWarehouse(Warehouse w) {
+    Warehouse newWares = findById(w.getWHiD());
+    return newWares;
   }
 
   @Override

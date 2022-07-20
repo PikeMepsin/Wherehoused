@@ -9,6 +9,7 @@ public interface WarehouseDAO {
   public List<Warehouse> findAll();
   public Warehouse findById(int id);
   public Warehouse findByDes(String designation);
+  public Warehouse findWarehouse(Warehouse w);
   
   // potentially "void" operation should probably come back
   // with whID (impossible to know with auto-increment)

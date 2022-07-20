@@ -2,6 +2,7 @@ package jdbc.models;
 
 public class Warehouse {
   // ID auto-increments
+  private int whID;
   private String designation;
   private String address;
   private int numShelves;
@@ -14,6 +15,10 @@ public class Warehouse {
     this.designation = d;
     this.address = a;
     this.numShelves = nS;
+  }
+  
+  public int getWHiD() {
+    return whID;
   }
     
   public String getDesignation() {
