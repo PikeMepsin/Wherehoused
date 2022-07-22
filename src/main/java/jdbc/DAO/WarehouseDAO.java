@@ -14,7 +14,6 @@ public interface WarehouseDAO {
   // potentially "void" operation should probably come back
   // with whID (impossible to know with auto-increment)
   // or (more is more approach) return the Warehouse itself
-  public Warehouse addNew(Warehouse whouse);
   public void updateWarehouse(Warehouse whouse); // contains the ID and updates entry
   public void updateWarehouse(int id);
   public void delWarehouse(Warehouse whouse);

@@ -84,12 +84,6 @@ public class MySQLWareDAO implements WarehouseDAO {
   }
 
   @Override
-  public Warehouse addNew(Warehouse whouse) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
-  @Override
   public void updateWarehouse(Warehouse whouse) {
     // TODO Auto-generated method stub
     
