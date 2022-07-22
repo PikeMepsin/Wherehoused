@@ -83,7 +83,7 @@ CREATE INDEX `IFK_shelfItemsId` ON `shelfItems` (`shID`);
 /*******************************************************************************
    Populate Tables
 ********************************************************************************/
-INSERT INTO `Warehouse` (`designation`, `sAddress`) VALUES (N'Venus', '33 Jump St.'); #1
+INSERT INTO `Warehouse` (`designation`, `sAddress`) VALUES (N'Venus', '22 Jump St.'); #1
 INSERT INTO `Warehouse` (`designation`, `sAddress`) VALUES (N'Jupiter', '1 Wolf of Wall St.'); #2
 INSERT INTO `Warehouse` (`designation`, `sAddress`) VALUES (N'Saturn', '727 Interface Blvd.'); #3
 INSERT INTO `Warehouse` (`designation`, `sAddress`) VALUES (N'Neptune', '8080 Localhost Dr.'); #4
